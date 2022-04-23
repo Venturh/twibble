@@ -14,14 +14,16 @@
 		5072E6B02812E3F0004EDC15 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6AF2812E3F0004EDC15 /* User.swift */; };
 		5072E6B22812E405004EDC15 /* Twitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B12812E405004EDC15 /* Twitch.swift */; };
 		5072E6B42812E423004EDC15 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B32812E423004EDC15 /* Request.swift */; };
-		5072E6B62812E4A0004EDC15 /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B52812E4A0004EDC15 /* StreamView.swift */; };
+		5072E6B62812E4A0004EDC15 /* StreamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B52812E4A0004EDC15 /* StreamListView.swift */; };
 		5072E6B82812E4C7004EDC15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B72812E4C7004EDC15 /* MainView.swift */; };
 		5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B92812E4DD004EDC15 /* BadgeView.swift */; };
-		5072E6BC2812E4EC004EDC15 /* StreamItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BB2812E4EC004EDC15 /* StreamItemView.swift */; };
+		5072E6BC2812E4EC004EDC15 /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BB2812E4EC004EDC15 /* StreamView.swift */; };
 		5072E6BE2812E504004EDC15 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BD2812E504004EDC15 /* HeaderView.swift */; };
 		5072E6C22812E571004EDC15 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5072E6C12812E571004EDC15 /* KeychainAccess */; };
 		5072E6C52812E582004EDC15 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 5072E6C42812E582004EDC15 /* LaunchAtLogin */; };
 		507C249028136C8400D94BE9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C248F28136C8400D94BE9 /* LoginView.swift */; };
+		50C27FA228149C0F00B2EA19 /* FullStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C27FA128149C0F00B2EA19 /* FullStreamView.swift */; };
+		50C27FA428149F1500B2EA19 /* CompactStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C27FA328149F1500B2EA19 /* CompactStreamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,13 +36,15 @@
 		5072E6AF2812E3F0004EDC15 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5072E6B12812E405004EDC15 /* Twitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitch.swift; sourceTree = "<group>"; };
 		5072E6B32812E423004EDC15 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		5072E6B52812E4A0004EDC15 /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
+		5072E6B52812E4A0004EDC15 /* StreamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamListView.swift; sourceTree = "<group>"; };
 		5072E6B72812E4C7004EDC15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5072E6B92812E4DD004EDC15 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
-		5072E6BB2812E4EC004EDC15 /* StreamItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamItemView.swift; sourceTree = "<group>"; };
+		5072E6BB2812E4EC004EDC15 /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
 		5072E6BD2812E504004EDC15 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		5072E6BF2812E520004EDC15 /* LaunchAtLogin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LaunchAtLogin; path = "../../../../Library/Developer/Xcode/DerivedData/twizzl-gzkqoybwmsdvlmdotcwibhikvppf/SourcePackages/checkouts/LaunchAtLogin"; sourceTree = "<group>"; };
 		507C248F28136C8400D94BE9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		50C27FA128149C0F00B2EA19 /* FullStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStreamView.swift; sourceTree = "<group>"; };
+		50C27FA328149F1500B2EA19 /* CompactStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactStreamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,12 +120,14 @@
 		5072E6AC2812E3C1004EDC15 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				5072E6B52812E4A0004EDC15 /* StreamView.swift */,
+				5072E6B52812E4A0004EDC15 /* StreamListView.swift */,
 				5072E6B72812E4C7004EDC15 /* MainView.swift */,
 				5072E6B92812E4DD004EDC15 /* BadgeView.swift */,
-				5072E6BB2812E4EC004EDC15 /* StreamItemView.swift */,
+				5072E6BB2812E4EC004EDC15 /* StreamView.swift */,
 				5072E6BD2812E504004EDC15 /* HeaderView.swift */,
 				507C248F28136C8400D94BE9 /* LoginView.swift */,
+				50C27FA128149C0F00B2EA19 /* FullStreamView.swift */,
+				50C27FA328149F1500B2EA19 /* CompactStreamView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -206,14 +212,16 @@
 			files = (
 				5072E6B02812E3F0004EDC15 /* User.swift in Sources */,
 				5072E6B82812E4C7004EDC15 /* MainView.swift in Sources */,
-				5072E6B62812E4A0004EDC15 /* StreamView.swift in Sources */,
+				5072E6B62812E4A0004EDC15 /* StreamListView.swift in Sources */,
 				5072E6B42812E423004EDC15 /* Request.swift in Sources */,
 				5072E6B22812E405004EDC15 /* Twitch.swift in Sources */,
 				5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */,
 				5072E6BE2812E504004EDC15 /* HeaderView.swift in Sources */,
-				5072E6BC2812E4EC004EDC15 /* StreamItemView.swift in Sources */,
+				5072E6BC2812E4EC004EDC15 /* StreamView.swift in Sources */,
+				50C27FA228149C0F00B2EA19 /* FullStreamView.swift in Sources */,
 				507C249028136C8400D94BE9 /* LoginView.swift in Sources */,
 				5072E6AE2812E3E0004EDC15 /* Stream.swift in Sources */,
+				50C27FA428149F1500B2EA19 /* CompactStreamView.swift in Sources */,
 				5072E69C2812E37B004EDC15 /* twibbleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

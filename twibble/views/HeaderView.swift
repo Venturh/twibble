@@ -3,15 +3,17 @@ import LaunchAtLogin
 
 struct HeaderView: View {
     @ObservedObject var twitch: Twitch
-    
+    @AppStorage("isCompact") var isCompact = false
     var body: some View {
         HStack {
-            if(twitch.isLoggedIn){
+            
                 HStack{
-                    Image("logo").resizable().frame(width: 24, height: 24, alignment: .center)
-                    Text("Twibble")
+                    Text("Twibble").fontWeight(.medium)
                 }
-            }
+                .font(.callout)
+                .foregroundColor(Color("textSecondary"))
+                
+            
             Spacer()
             Menu {
                 if  twitch.isLoggedIn {
@@ -19,20 +21,23 @@ struct HeaderView: View {
                         Text(twitch.user?.display_name ?? "")
                     }
                     )
-                    
+                } else {
+                    Text("Not logged in")
+                }
+                Divider()
+                Toggle(isOn: $isCompact){
+                    Text("Compact")
+                }
+                LaunchAtLogin.Toggle {
+                    Text("Launch at login")
+                }
+                Divider()
+                if twitch.isLoggedIn{
                     Button("Logout", action: {
                         Task {
                             await twitch.logout()
                         }
                     })
-                    
-                } else {
-                    Text("Not logged in")
-                }
-                Divider()
-                
-                LaunchAtLogin.Toggle {
-                    Text("Launch at login")
                 }
                 Button("Quit", action: {
                     NSApplication.shared.terminate(nil)

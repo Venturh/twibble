@@ -2,14 +2,11 @@ import SwiftUI
 
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
-
     private var popover: NSPopover!
     private var statusBarItem: NSStatusItem!
     private var badgeView : BadgeView?
+    private var streams : [Stream] = []
     
-    
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApp.setActivationPolicy(.accessory)
 
@@ -28,7 +25,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private func setupContentView() {
         let contentView = MainView()
 
-        let frameSize = NSSize(width: 420, height: 600)
+        let frameSize = NSSize(width: 420, height: 522)
 
         // Initialize ContentView
         let hostedContentView = NSHostingView(rootView: contentView)
@@ -71,8 +68,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     @objc func onStreamChange(_ notification: NSNotification){
-        guard let streams = notification.userInfo?["streams"] as? [Stream] else { return }
-        setBadge(num: streams.count)
+        guard let count = notification.userInfo?["count"] as? Int else { return }
+        setBadge(num: count)
     }
 
     func setBadge(num : Int)
@@ -97,9 +94,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
 @main
 struct TwizzlApp: App {
-
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-
+    
     var body: some Scene {
         Settings {
             EmptyView()

@@ -4,6 +4,7 @@ import SwiftUI
 
 struct MainView: View {
     @State var twitch = Twitch()
+    @AppStorage("isCompact") var isCompact = false
     
     let timer = Timer.publish(every: 90, on: .main, in: .common).autoconnect()
     
@@ -12,8 +13,8 @@ struct MainView: View {
             HeaderView(twitch: twitch)
             if  twitch.isLoggedIn {
                 ScrollView {
-                    StreamView(twitch: twitch)
-                        .padding(.trailing)
+                    StreamListView(twitch: twitch)
+                        
                         .onReceive(timer) { time in
                             if twitch.user != nil {
                                 Task {
@@ -32,7 +33,7 @@ struct MainView: View {
             Spacer()
         }
         
-        .frame(width: 420, height: 600)
+        .frame(width: isCompact ? 300 : 360, height: isCompact ? 420 : 522)
         .background(Color("bgPrimary"))
         .foregroundColor(Color("textPrimary"))
     }

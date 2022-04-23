@@ -220,7 +220,7 @@ class Twitch: NSObject, ObservableObject, ASWebAuthenticationPresentationContext
         
         DispatchQueue.main.async {
             [] in
-            let userInfo: [String: Any] = ["count": self.streams.count, "streams": self.streams ]
+            let userInfo: [String: Any] = ["count": self.streams.count]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onStreamChange"), object: nil, userInfo: userInfo)
         }
         

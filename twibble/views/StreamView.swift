@@ -1,40 +1,69 @@
-import Foundation
 import SwiftUI
-import LaunchAtLogin
-
 
 struct StreamView: View {
+    @Binding var stream: Stream
+    var id: String
     
-    @ObservedObject var twitch: Twitch
+    @State private var isHovered = false
+    @Binding var lastHoveredId: String
+    @AppStorage("isCompact") var isCompact = false
     
-    @State private var lastHoveredId = ""
-
+    func formatNumber(number: Int) -> String {
+        return Formatter.number.string(for: number) ?? ""
+    }
+    
+    func timeAgoDisplay(string:String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        
+        let date = dateFormatter.date(from: string)
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        if(date != nil){
+            return "started \(formatter.localizedString(for: date!, relativeTo: Date()))"
+        }
+        return "started unkown"
+    }
+    
+    
     
     
     var body: some View {
-        
-            VStack{
-                if(twitch.streams.count > 0){
-                    ForEach($twitch.streams, id: \.self) { stream in
-                        StreamItem(stream: stream,id: stream.id, lastHoveredId: $lastHoveredId)
-                            .onHover { isHovered in
-                                if isHovered {
-                                    lastHoveredId = stream.id
-                                } else if lastHoveredId == stream.id {
-                                    lastHoveredId = stream.id
-                                }
-                            }
-                    }
-                    
-                } else {
-                    Spacer()
-                    Text("No stream online")
-                }
+        Link(destination: URL(string: "https://www.twitch.tv/\(stream.user_name)")!){
+            if(isCompact){
+                CompactStreamView(
+                    stream: stream,
+                    viewer_count: formatNumber(number:stream.viewer_count)
+                )
+            } else {
+                FullStreamView(
+                    stream: stream,
+                    viewer_count: formatNumber(number:stream.viewer_count),
+                    ago: timeAgoDisplay(string:stream.started_at))
             }
+            
         }
+        .padding(.horizontal, 8)
+        .contentShape(RoundedRectangle(cornerRadius: 25, style:.continuous))
+        .background(isHovered ? Color("accent") : .clear)
+        .onChange(of: lastHoveredId) {
+            isHovered = $0 == id
+        }
+    }
 }
 
 
+extension Formatter {
+    static let number: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: NSLocale.current.languageCode ?? "en-US")
+        return formatter
+    }()
+}
 
 
 
