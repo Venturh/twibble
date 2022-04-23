@@ -8,18 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		5072E69C2812E37B004EDC15 /* twibbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E69B2812E37B004EDC15 /* twibbleApp.swift */; };
-		5072E69E2812E37B004EDC15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E69D2812E37B004EDC15 /* ContentView.swift */; };
 		5072E6A02812E37C004EDC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5072E69F2812E37C004EDC15 /* Assets.xcassets */; };
 		5072E6A32812E37C004EDC15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5072E6A22812E37C004EDC15 /* Preview Assets.xcassets */; };
+		5072E6AE2812E3E0004EDC15 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6AD2812E3E0004EDC15 /* Stream.swift */; };
+		5072E6B02812E3F0004EDC15 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6AF2812E3F0004EDC15 /* User.swift */; };
+		5072E6B22812E405004EDC15 /* Twitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B12812E405004EDC15 /* Twitch.swift */; };
+		5072E6B42812E423004EDC15 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B32812E423004EDC15 /* Request.swift */; };
+		5072E6B62812E4A0004EDC15 /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B52812E4A0004EDC15 /* StreamView.swift */; };
+		5072E6B82812E4C7004EDC15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B72812E4C7004EDC15 /* MainView.swift */; };
+		5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B92812E4DD004EDC15 /* BadgeView.swift */; };
+		5072E6BC2812E4EC004EDC15 /* StreamItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BB2812E4EC004EDC15 /* StreamItemView.swift */; };
+		5072E6BE2812E504004EDC15 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BD2812E504004EDC15 /* HeaderView.swift */; };
+		5072E6C22812E571004EDC15 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5072E6C12812E571004EDC15 /* KeychainAccess */; };
+		5072E6C52812E582004EDC15 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 5072E6C42812E582004EDC15 /* LaunchAtLogin */; };
+		507C249028136C8400D94BE9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C248F28136C8400D94BE9 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5072E6982812E37B004EDC15 /* twibble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twibble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5072E69B2812E37B004EDC15 /* twibbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twibbleApp.swift; sourceTree = "<group>"; };
-		5072E69D2812E37B004EDC15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5072E69F2812E37C004EDC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5072E6A22812E37C004EDC15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5072E6A42812E37C004EDC15 /* twibble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = twibble.entitlements; sourceTree = "<group>"; };
+		5072E6AD2812E3E0004EDC15 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		5072E6AF2812E3F0004EDC15 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5072E6B12812E405004EDC15 /* Twitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitch.swift; sourceTree = "<group>"; };
+		5072E6B32812E423004EDC15 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5072E6B52812E4A0004EDC15 /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
+		5072E6B72812E4C7004EDC15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5072E6B92812E4DD004EDC15 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		5072E6BB2812E4EC004EDC15 /* StreamItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamItemView.swift; sourceTree = "<group>"; };
+		5072E6BD2812E504004EDC15 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5072E6BF2812E520004EDC15 /* LaunchAtLogin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LaunchAtLogin; path = "../../../../Library/Developer/Xcode/DerivedData/twizzl-gzkqoybwmsdvlmdotcwibhikvppf/SourcePackages/checkouts/LaunchAtLogin"; sourceTree = "<group>"; };
+		507C248F28136C8400D94BE9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5072E6C52812E582004EDC15 /* LaunchAtLogin in Frameworks */,
+				5072E6C22812E571004EDC15 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +75,10 @@
 		5072E69A2812E37B004EDC15 /* twibble */ = {
 			isa = PBXGroup;
 			children = (
+				5072E6AB2812E3BB004EDC15 /* utils */,
+				5072E6AA2812E3B3004EDC15 /* models */,
+				5072E6AC2812E3C1004EDC15 /* views */,
 				5072E69B2812E37B004EDC15 /* twibbleApp.swift */,
-				5072E69D2812E37B004EDC15 /* ContentView.swift */,
 				5072E69F2812E37C004EDC15 /* Assets.xcassets */,
 				5072E6A42812E37C004EDC15 /* twibble.entitlements */,
 				5072E6A12812E37C004EDC15 /* Preview Content */,
@@ -64,9 +89,41 @@
 		5072E6A12812E37C004EDC15 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				5072E6BF2812E520004EDC15 /* LaunchAtLogin */,
 				5072E6A22812E37C004EDC15 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5072E6AA2812E3B3004EDC15 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5072E6B12812E405004EDC15 /* Twitch.swift */,
+				5072E6AD2812E3E0004EDC15 /* Stream.swift */,
+				5072E6AF2812E3F0004EDC15 /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5072E6AB2812E3BB004EDC15 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5072E6B32812E423004EDC15 /* Request.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		5072E6AC2812E3C1004EDC15 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				5072E6B52812E4A0004EDC15 /* StreamView.swift */,
+				5072E6B72812E4C7004EDC15 /* MainView.swift */,
+				5072E6B92812E4DD004EDC15 /* BadgeView.swift */,
+				5072E6BB2812E4EC004EDC15 /* StreamItemView.swift */,
+				5072E6BD2812E504004EDC15 /* HeaderView.swift */,
+				507C248F28136C8400D94BE9 /* LoginView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +142,10 @@
 			dependencies = (
 			);
 			name = twibble;
+			packageProductDependencies = (
+				5072E6C12812E571004EDC15 /* KeychainAccess */,
+				5072E6C42812E582004EDC15 /* LaunchAtLogin */,
+			);
 			productName = twibble;
 			productReference = 5072E6982812E37B004EDC15 /* twibble.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +174,10 @@
 				Base,
 			);
 			mainGroup = 5072E68F2812E37B004EDC15;
+			packageReferences = (
+				5072E6C02812E571004EDC15 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				5072E6C32812E582004EDC15 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
 			productRefGroup = 5072E6992812E37B004EDC15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +204,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5072E69E2812E37B004EDC15 /* ContentView.swift in Sources */,
+				5072E6B02812E3F0004EDC15 /* User.swift in Sources */,
+				5072E6B82812E4C7004EDC15 /* MainView.swift in Sources */,
+				5072E6B62812E4A0004EDC15 /* StreamView.swift in Sources */,
+				5072E6B42812E423004EDC15 /* Request.swift in Sources */,
+				5072E6B22812E405004EDC15 /* Twitch.swift in Sources */,
+				5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */,
+				5072E6BE2812E504004EDC15 /* HeaderView.swift in Sources */,
+				5072E6BC2812E4EC004EDC15 /* StreamItemView.swift in Sources */,
+				507C249028136C8400D94BE9 /* LoginView.swift in Sources */,
+				5072E6AE2812E3E0004EDC15 /* Stream.swift in Sources */,
 				5072E69C2812E37B004EDC15 /* twibbleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +410,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5072E6C02812E571004EDC15 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5072E6C32812E582004EDC15 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5072E6C12812E571004EDC15 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5072E6C02812E571004EDC15 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		5072E6C42812E582004EDC15 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5072E6C32812E582004EDC15 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5072E6902812E37B004EDC15 /* Project object */;
 }
