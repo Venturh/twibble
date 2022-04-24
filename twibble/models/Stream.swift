@@ -17,7 +17,7 @@ struct Stream: Decodable, Identifiable, Hashable {
     let game_name: String
     var type: String
     let title: String
-    let user_name: String
+    var user_name: String
     let viewer_count: Int
     let started_at: String
     let thumbnail_url: String

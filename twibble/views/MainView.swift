@@ -12,9 +12,8 @@ struct MainView: View {
         VStack(spacing:0){
             HeaderView(twitch: twitch)
             if  twitch.isLoggedIn {
-                ScrollView {
+                
                     StreamListView(twitch: twitch)
-                        
                         .onReceive(timer) { time in
                             if twitch.user != nil {
                                 Task {
@@ -23,7 +22,7 @@ struct MainView: View {
                                 
                             }
                         }
-                }
+                
                 
             } else {
                 Spacer()

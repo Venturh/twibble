@@ -24,6 +24,10 @@
 		507C249028136C8400D94BE9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C248F28136C8400D94BE9 /* LoginView.swift */; };
 		50C27FA228149C0F00B2EA19 /* FullStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C27FA128149C0F00B2EA19 /* FullStreamView.swift */; };
 		50C27FA428149F1500B2EA19 /* CompactStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C27FA328149F1500B2EA19 /* CompactStreamView.swift */; };
+		50F35E862815DE82007BBB8D /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 50F35E852815DE82007BBB8D /* KeyboardShortcuts */; };
+		50F35E882815EDA7007BBB8D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F35E872815EDA7007BBB8D /* Constants.swift */; };
+		50F35E8A2815EDD1007BBB8D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F35E892815EDD1007BBB8D /* SettingsView.swift */; };
+		50F35E8C2815F36F007BBB8D /* KeyAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F35E8B2815F36F007BBB8D /* KeyAware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,9 @@
 		507C248F28136C8400D94BE9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		50C27FA128149C0F00B2EA19 /* FullStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStreamView.swift; sourceTree = "<group>"; };
 		50C27FA328149F1500B2EA19 /* CompactStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactStreamView.swift; sourceTree = "<group>"; };
+		50F35E872815EDA7007BBB8D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50F35E892815EDD1007BBB8D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		50F35E8B2815F36F007BBB8D /* KeyAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyAware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,7 @@
 			files = (
 				5072E6C52812E582004EDC15 /* LaunchAtLogin in Frameworks */,
 				5072E6C22812E571004EDC15 /* KeychainAccess in Frameworks */,
+				50F35E862815DE82007BBB8D /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				5072E6B32812E423004EDC15 /* Request.swift */,
+				50F35E872815EDA7007BBB8D /* Constants.swift */,
+				50F35E8B2815F36F007BBB8D /* KeyAware.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -128,6 +138,7 @@
 				507C248F28136C8400D94BE9 /* LoginView.swift */,
 				50C27FA128149C0F00B2EA19 /* FullStreamView.swift */,
 				50C27FA328149F1500B2EA19 /* CompactStreamView.swift */,
+				50F35E892815EDD1007BBB8D /* SettingsView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 			packageProductDependencies = (
 				5072E6C12812E571004EDC15 /* KeychainAccess */,
 				5072E6C42812E582004EDC15 /* LaunchAtLogin */,
+				50F35E852815DE82007BBB8D /* KeyboardShortcuts */,
 			);
 			productName = twibble;
 			productReference = 5072E6982812E37B004EDC15 /* twibble.app */;
@@ -183,6 +195,7 @@
 			packageReferences = (
 				5072E6C02812E571004EDC15 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				5072E6C32812E582004EDC15 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				50F35E842815DE82007BBB8D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = 5072E6992812E37B004EDC15 /* Products */;
 			projectDirPath = "";
@@ -210,7 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F35E8A2815EDD1007BBB8D /* SettingsView.swift in Sources */,
 				5072E6B02812E3F0004EDC15 /* User.swift in Sources */,
+				50F35E8C2815F36F007BBB8D /* KeyAware.swift in Sources */,
 				5072E6B82812E4C7004EDC15 /* MainView.swift in Sources */,
 				5072E6B62812E4A0004EDC15 /* StreamListView.swift in Sources */,
 				5072E6B42812E423004EDC15 /* Request.swift in Sources */,
@@ -221,6 +236,7 @@
 				50C27FA228149C0F00B2EA19 /* FullStreamView.swift in Sources */,
 				507C249028136C8400D94BE9 /* LoginView.swift in Sources */,
 				5072E6AE2812E3E0004EDC15 /* Stream.swift in Sources */,
+				50F35E882815EDA7007BBB8D /* Constants.swift in Sources */,
 				50C27FA428149F1500B2EA19 /* CompactStreamView.swift in Sources */,
 				5072E69C2812E37B004EDC15 /* twibbleApp.swift in Sources */,
 			);
@@ -436,6 +452,14 @@
 				kind = branch;
 			};
 		};
+		50F35E842815DE82007BBB8D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -448,6 +472,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5072E6C32812E582004EDC15 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
+		};
+		50F35E852815DE82007BBB8D /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50F35E842815DE82007BBB8D /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

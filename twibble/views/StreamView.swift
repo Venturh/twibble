@@ -2,7 +2,8 @@ import SwiftUI
 
 struct StreamView: View {
     @Binding var stream: Stream
-    var id: String
+    var index: Int
+    var selectedIndex: Int
     
     @State private var isHovered = false
     @Binding var lastHoveredId: String
@@ -47,12 +48,15 @@ struct StreamView: View {
             
         }
         .padding(.horizontal, 8)
-        .contentShape(RoundedRectangle(cornerRadius: 25, style:.continuous))
-        .background(isHovered ? Color("accent") : .clear)
+        .padding(.vertical, 4)
+        .background(selectedIndex == index ? Color("accentPrimary") : isHovered ? Color("accentSecondary") : .clear)
         .onChange(of: lastHoveredId) {
-            isHovered = $0 == id
+            isHovered = $0 == stream.id
         }
+        
     }
+    
+        
 }
 
 
