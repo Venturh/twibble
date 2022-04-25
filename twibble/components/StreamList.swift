@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import KeyboardShortcuts
 
-struct StreamListView: View {
+struct StreamList: View {
     
     @ObservedObject var twitch: Twitch
     
@@ -25,7 +25,7 @@ struct StreamListView: View {
                     ScrollViewReader { scrollView in
                         ScrollView(.vertical) {
                             ForEach(Array($twitch.streams.enumerated()), id: \.0) { (index, stream) in
-                                StreamView(stream: stream, index: index, selectedIndex: selectedIndex, lastHoveredId: $lastHoveredId)
+                                StreamListItem(stream: stream, index: index, selectedIndex: selectedIndex, lastHoveredId: $lastHoveredId)
                                     .onHover { isHovered in
                                         if isHovered {
                                             lastHoveredId = stream.id

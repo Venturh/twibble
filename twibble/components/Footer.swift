@@ -1,7 +1,7 @@
 import SwiftUI
 import KeyboardShortcuts
 
-struct FooterView: View {
+struct Footer: View {
     @ObservedObject var twitch: Twitch
     @AppStorage("isCompact") var isCompact = false
     @Binding var currentView: String

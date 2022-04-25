@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct StreamView: View {
+struct StreamListItem: View {
     @Binding var stream: Stream
     var index: Int
     var selectedIndex: Int
     
     @State private var isHovered = false
     @Binding var lastHoveredId: String
-    @AppStorage("isCompact") var isCompact = false
+    @AppStorage("isCompact") var isCompact = true
     
     func formatNumber(number: Int) -> String {
         return Formatter.number.string(for: number) ?? ""
@@ -35,12 +35,12 @@ struct StreamView: View {
     var body: some View {
         Link(destination: URL(string: "https://www.twitch.tv/\(stream.user_name)")!){
             if(isCompact){
-                CompactStreamView(
+                StreamCompact(
                     stream: stream,
                     viewer_count: formatNumber(number:stream.viewer_count)
                 )
             } else {
-                FullStreamView(
+                StreamFull(
                     stream: stream,
                     viewer_count: formatNumber(number:stream.viewer_count),
                     ago: timeAgoDisplay(string:stream.started_at))

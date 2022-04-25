@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FullStreamView: View {
+struct StreamFull: View {
     var stream: Stream
     var viewer_count : String
     var ago: String

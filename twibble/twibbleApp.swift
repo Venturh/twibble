@@ -5,7 +5,7 @@ import KeyboardShortcuts
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var popover: NSPopover!
     private var statusBarItem: NSStatusItem!
-    private var badgeView : BadgeView?
+    private var badge : Badge?
     private var twitch  = Twitch()
     
     @AppStorage("showBadge") var showBadge = true
@@ -100,16 +100,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func setBadge(num : Int)
     {
         if num == 0 {
-            if let view = badgeView {
+            if let view = badge {
                 view.removeFromSuperview()
-                badgeView = nil
+                badge = nil
             }
         } else {
-            if let badgeView = badgeView {
-                badgeView.number = num
+            if let badge = badge {
+                badge.number = num
             } else {
-                badgeView = BadgeView(frame: NSRect(x: 6, y: 6, width: 30, height: 28), number: num)
-                statusBarItem.button!.addSubview(badgeView!)
+                badge = Badge(frame: NSRect(x: 6, y: 6, width: 30, height: 28), number: num)
+                statusBarItem.button!.addSubview(badge!)
             }
         }
     }

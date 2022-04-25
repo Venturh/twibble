@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CompactStreamView: View {
+struct StreamCompact: View {
     var stream: Stream
     var viewer_count : String
     

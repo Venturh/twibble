@@ -1,6 +1,6 @@
 import AppKit
 
-class BadgeView: NSView {
+class Badge: NSView {
     
     var number : Int {
         didSet {

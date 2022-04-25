@@ -5,7 +5,7 @@ import LaunchAtLogin
 struct SettingsView: View {
     
     @ObservedObject var twitch: Twitch
-    @AppStorage("isCompact") var isCompact = false
+    @AppStorage("isCompact") var isCompact = true
     @AppStorage("showBadge") var showBadge = true
     @ObservedObject private var launchAtLogin = LaunchAtLogin.observable
     @Binding var currentView: String

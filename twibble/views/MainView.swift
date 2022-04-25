@@ -4,7 +4,7 @@ import KeyboardShortcuts
 
 struct MainView: View {
     @ObservedObject var twitch:Twitch
-    @AppStorage("isCompact") var isCompact = false
+    @AppStorage("isCompact") var isCompact = true
     @State var currentView = "streams"
     
     let timer = Timer.publish(every: 90, on: .main, in: .common).autoconnect()
@@ -14,7 +14,7 @@ struct MainView: View {
         VStack(){
             if  twitch.isLoggedIn {
                 if currentView == "streams" {
-                    StreamListView(twitch: twitch)
+                    StreamList(twitch: twitch)
                         .onReceive(timer) { time in
                             if twitch.user != nil {
                                 Task {
@@ -33,7 +33,7 @@ struct MainView: View {
                     .environmentObject(twitch)
             }
             Spacer()
-            FooterView(twitch: twitch, currentView: $currentView)
+            Footer(twitch: twitch, currentView: $currentView)
         }
         
         .padding(12)
