@@ -26,6 +26,7 @@ struct StreamListView: View {
                                         lastHoveredId = stream.id
                                     }
                                 }
+                                
                             
                         }
                     }
@@ -35,6 +36,7 @@ struct StreamListView: View {
                         }
                     }
                 }
+                
             } else {
                 Spacer()
                 Text("No stream online")
@@ -55,9 +57,7 @@ struct StreamListView: View {
                 }
             } else if $0 == .return{
                 let selectedStream = twitch.streams[selectedIndex]
-                if(selectedStream != nil) {
-                    openURL(URL(string:"https://www.twitch.tv/\(selectedStream.user_name)")!)
-                }
+                openURL(URL(string:"https://www.twitch.tv/\(selectedStream.user_name)")!)
             }
             
         }))

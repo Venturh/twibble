@@ -1,4 +1,5 @@
 import SwiftUI
+import KeyboardShortcuts
 
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
@@ -15,8 +16,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             selector: #selector(onStreamChange),
             name: NSNotification.Name("onStreamChange"),
             object: nil)
-
-
+        
         setupContentView()
         setupStatusBar()
     }
@@ -39,8 +39,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         popover.contentViewController = NSViewController()
         popover.contentViewController?.view = hostedContentView
         popover.setValue(true, forKeyPath: "shouldHideAnchor")
-
-
         popover.contentViewController?.view.window?.makeKey()
 
 
@@ -51,6 +49,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         if let statusBarItemButton = self.statusBarItem.button {
             statusBarItem.button?.image = NSImage(named: NSImage.Name("icon"))
             statusBarItemButton.action = #selector(togglePopover(_:))
+            
+            KeyboardShortcuts.onKeyUp(for: .toogleApp) { [self] in
+                if popover.isShown {
+                    popover.performClose(statusBarItemButton)
+                } else {
+                    popover.show(relativeTo: statusBarItemButton.bounds, of: statusBarItemButton, preferredEdge: .minY)
+                    NSApplication.shared.activate(ignoringOtherApps: true)
+                }
+            }
 
         }
     }
@@ -102,5 +109,6 @@ struct TwizzlApp: App {
         }
     }
 }
+
 
 

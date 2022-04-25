@@ -47,8 +47,7 @@ struct StreamView: View {
             }
             
         }
-        .padding(.horizontal, 8)
-        .padding(.vertical, 4)
+        .padding(4)
         .background(selectedIndex == index ? Color("accentPrimary") : isHovered ? Color("accentSecondary") : .clear)
         .onChange(of: lastHoveredId) {
             isHovered = $0 == stream.id

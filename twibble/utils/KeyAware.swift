@@ -2,6 +2,13 @@ import Foundation
 import SwiftUI
 import KeyboardShortcuts
 
+
+extension KeyboardShortcuts.Name {
+    static let toogleApp = Self("toogleApp", default: .init(.g, modifiers: [.shift]))
+    static let toggleView = Self("toggleView", default: .init(.comma, modifiers: [.command]))
+}
+
+
 struct KeyAware: NSViewRepresentable {
     let onEvent: (Event) -> Void
     

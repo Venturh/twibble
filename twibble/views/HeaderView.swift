@@ -1,73 +1,53 @@
 import SwiftUI
-import LaunchAtLogin
+import KeyboardShortcuts
 
 struct HeaderView: View {
     @ObservedObject var twitch: Twitch
     @AppStorage("isCompact") var isCompact = false
+    @Binding var currentView: String
+    
+    var toogleDescription = KeyboardShortcuts.Name.toogleApp.shortcut?.description ?? KeyboardShortcuts.Name.toogleApp.defaultShortcut!.description
+    
     var body: some View {
-        HStack {
-            
-                HStack{
-                    Text("Twibble").fontWeight(.medium)
-                }
-                .font(.callout)
-                .foregroundColor(Color("textSecondary"))
-                
-            
-            Spacer()
-            Menu {
-                if  twitch.isLoggedIn {
-                    Link(destination: URL(string: "https://www.twitch.tv/\(twitch.user?.display_name ?? "")")!, label: {
-                        Text(twitch.user?.display_name ?? "")
-                    }
-                    )
-                } else {
-                    Text("Not logged in")
-                }
-                Divider()
-                Toggle(isOn: $isCompact){
-                    Text("Compact")
-                }
-                LaunchAtLogin.Toggle {
-                    Text("Launch at login")
-                }
-                Divider()
-                if twitch.isLoggedIn{
-                    Button("Logout", action: {
-                        Task {
-                            await twitch.logout()
-                        }
-                    })
-                }
-                Button("Quit", action: {
-                    NSApplication.shared.terminate(nil)
-                })
-            } label: {
-                Image(systemName: "gearshape.fill")
+        HStack(alignment: .center) {
+            HStack(alignment: .center){
+                Text("Twibble").fontWeight(.medium)
+                Text("\(toogleDescription) to toggle")
             }
+           .font(.system(size: 12))
+            .foregroundColor(Color("textSecondary"))
+
+            Spacer()
             
-            .menuIndicator(.hidden)
-            .menuStyle(.borderlessButton)
+            Button(action: {
+                if currentView == "streamList" {
+                    currentView = "settings"
+                } else {
+                    currentView = "streamList"
+                }
+            } ){
+                Image(systemName: "gearshape").foregroundColor(Color("textSecondary"))
+            }
+            .buttonStyle(.borderless)
+            .help(KeyboardShortcuts.Name.toggleView.shortcut!.description )
+
             .fixedSize()
-            
         }
-        
-        .padding(8)
-    }
-}
-
-struct HeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeaderView(twitch:Twitch())
     }
 }
 
 
-
-
-extension NSButton {
-    open override var focusRingType: NSFocusRingType {
-        get { .none }
-        set { }
+struct PopoverView: View {
+    var body: some View {
+        VStack {
+            Text("Some text here ").padding()
+            Button("Resume") {
+            }
+        }.padding()
     }
 }
+
+
+
+
+
