@@ -6,6 +6,7 @@ struct SettingsView: View {
     
     @ObservedObject var twitch: Twitch
     @AppStorage("isCompact") var isCompact = false
+    @AppStorage("showBadge") var showBadge = true
     @ObservedObject private var launchAtLogin = LaunchAtLogin.observable
     @Binding var currentView: String
     
@@ -23,7 +24,18 @@ struct SettingsView: View {
                 )
                 .buttonStyle(.plain)
                 Text("Preferences").font(.body)
+                Spacer()
+                Button(
+                    action: {
+                        NSApplication.shared.terminate(nil)
+                    },
+                    label: {
+                        Image(systemName: "xmark").foregroundColor(Color("textSecondary"))
+                    }
+                )
+                .buttonStyle(.plain)
             }
+            .padding(.bottom,4)
             HStack(alignment:.top){
                 AsyncImage(url: URL(string: twitch.user?.profile_image_url ?? "")){ image in
                     image
@@ -43,28 +55,18 @@ struct SettingsView: View {
                     
                 }
                 Spacer()
-                HStack{
-                    Button(
-                        action: {
-                            Task{
-                                await twitch.logout()
-                            }
-                        },
-                        label: {
-                            Image(systemName: "rectangle.portrait.and.arrow.right").foregroundColor(Color("textSecondary"))
+                Button(
+                    action: {
+                        Task{
+                            await twitch.logout()
+                            currentView = "streams"
                         }
-                    )
-                    .buttonStyle(.plain)
-                    Button(
-                        action: {
-                            NSApplication.shared.terminate(nil)
-                        },
-                        label: {
-                            Image(systemName: "xmark").foregroundColor(Color("textSecondary"))
-                        }
-                    )
-                    .buttonStyle(.plain)
-                }
+                    },
+                    label: {
+                        Image(systemName: "rectangle.portrait.and.arrow.right").foregroundColor(Color("textSecondary"))
+                    }
+                )
+                .buttonStyle(.plain)
                 
             }
             
@@ -73,6 +75,13 @@ struct SettingsView: View {
                     Text("Compact").frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .toggleStyle(.switch).tint(.accentColor)
+                
+                Toggle(isOn: $showBadge){
+                    Text("Badge").frame(maxWidth: .infinity, alignment: .leading)
+                }
+ 
+                .toggleStyle(.switch).tint(.accentColor)
+                
                 Toggle(isOn: $launchAtLogin.isEnabled){
                     Text("Launch at login").frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -89,7 +98,11 @@ struct SettingsView: View {
                 }
             }
         }
+        .onChange(of: showBadge, perform: { show in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onShowBadgeChange"), object:nil)
+        })
     }
+        
     
 }
 

@@ -118,7 +118,7 @@ class Twitch: NSObject, ObservableObject, ASWebAuthenticationPresentationContext
             try keychain.remove("userToken")
             DispatchQueue.main.async {
                 self.streams = []
-                let userInfo: [String: Any] = ["count": 0, "streams": [] ]
+                let userInfo = ["count": 0]
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onStreamChange"), object: nil, userInfo: userInfo)
                 
             }
@@ -215,12 +215,9 @@ class Twitch: NSObject, ObservableObject, ASWebAuthenticationPresentationContext
                 }
             }
         } while(cursor != nil)
-        
-        
-        
         DispatchQueue.main.async {
             [] in
-            let userInfo: [String: Any] = ["count": self.streams.count]
+            let userInfo = ["count": self.streams.count]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onStreamChange"), object: nil, userInfo: userInfo)
         }
         

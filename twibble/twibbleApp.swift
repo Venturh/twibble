@@ -6,7 +6,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var popover: NSPopover!
     private var statusBarItem: NSStatusItem!
     private var badgeView : BadgeView?
-    private var streams : [Stream] = []
+    private var twitch  = Twitch()
+    
+    @AppStorage("showBadge") var showBadge = true
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApp.setActivationPolicy(.accessory)
@@ -17,13 +19,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             name: NSNotification.Name("onStreamChange"),
             object: nil)
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onShowBadgeChange),
+            name: NSNotification.Name("onShowBadgeChange"),
+            object: nil)
+        
         setupContentView()
         setupStatusBar()
     }
 
 
     private func setupContentView() {
-        let contentView = MainView()
+        let contentView = MainView(twitch: twitch)
 
         let frameSize = NSSize(width: 420, height: 522)
 
@@ -76,7 +84,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @objc func onStreamChange(_ notification: NSNotification){
         guard let count = notification.userInfo?["count"] as? Int else { return }
-        setBadge(num: count)
+        if(showBadge){
+            setBadge(num: count)
+        }
+    }
+    
+    @objc func onShowBadgeChange(){
+        if(showBadge){
+            setBadge(num: twitch.streams.count)
+        } else {
+            setBadge(num: 0)
+        }
     }
 
     func setBadge(num : Int)

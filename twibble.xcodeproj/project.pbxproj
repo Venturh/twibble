@@ -18,7 +18,7 @@
 		5072E6B82812E4C7004EDC15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B72812E4C7004EDC15 /* MainView.swift */; };
 		5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6B92812E4DD004EDC15 /* BadgeView.swift */; };
 		5072E6BC2812E4EC004EDC15 /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BB2812E4EC004EDC15 /* StreamView.swift */; };
-		5072E6BE2812E504004EDC15 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BD2812E504004EDC15 /* HeaderView.swift */; };
+		5072E6BE2812E504004EDC15 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E6BD2812E504004EDC15 /* FooterView.swift */; };
 		5072E6C22812E571004EDC15 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5072E6C12812E571004EDC15 /* KeychainAccess */; };
 		5072E6C52812E582004EDC15 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 5072E6C42812E582004EDC15 /* LaunchAtLogin */; };
 		507C249028136C8400D94BE9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C248F28136C8400D94BE9 /* LoginView.swift */; };
@@ -44,7 +44,7 @@
 		5072E6B72812E4C7004EDC15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5072E6B92812E4DD004EDC15 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		5072E6BB2812E4EC004EDC15 /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
-		5072E6BD2812E504004EDC15 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5072E6BD2812E504004EDC15 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		5072E6BF2812E520004EDC15 /* LaunchAtLogin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LaunchAtLogin; path = "../../../../Library/Developer/Xcode/DerivedData/twizzl-gzkqoybwmsdvlmdotcwibhikvppf/SourcePackages/checkouts/LaunchAtLogin"; sourceTree = "<group>"; };
 		507C248F28136C8400D94BE9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		50C27FA128149C0F00B2EA19 /* FullStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStreamView.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				5072E6B72812E4C7004EDC15 /* MainView.swift */,
 				5072E6B92812E4DD004EDC15 /* BadgeView.swift */,
 				5072E6BB2812E4EC004EDC15 /* StreamView.swift */,
-				5072E6BD2812E504004EDC15 /* HeaderView.swift */,
+				5072E6BD2812E504004EDC15 /* FooterView.swift */,
 				507C248F28136C8400D94BE9 /* LoginView.swift */,
 				50C27FA128149C0F00B2EA19 /* FullStreamView.swift */,
 				50C27FA328149F1500B2EA19 /* CompactStreamView.swift */,
@@ -160,6 +160,7 @@
 				5072E6942812E37B004EDC15 /* Sources */,
 				5072E6952812E37B004EDC15 /* Frameworks */,
 				5072E6962812E37B004EDC15 /* Resources */,
+				5028F2E92816FE18003F34FF /* Launch at Login Helper */,
 			);
 			buildRules = (
 			);
@@ -227,6 +228,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5028F2E92816FE18003F34FF /* Launch at Login Helper */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Launch at Login Helper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5072E6942812E37B004EDC15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -240,7 +262,7 @@
 				5072E6B42812E423004EDC15 /* Request.swift in Sources */,
 				5072E6B22812E405004EDC15 /* Twitch.swift in Sources */,
 				5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */,
-				5072E6BE2812E504004EDC15 /* HeaderView.swift in Sources */,
+				5072E6BE2812E504004EDC15 /* FooterView.swift in Sources */,
 				5072E6BC2812E4EC004EDC15 /* StreamView.swift in Sources */,
 				50C27FA228149C0F00B2EA19 /* FullStreamView.swift in Sources */,
 				507C249028136C8400D94BE9 /* LoginView.swift in Sources */,
