@@ -7,12 +7,12 @@ class Twitch: NSObject, ObservableObject, ASWebAuthenticationPresentationContext
     @Published var token: String?
     @Published var user: User?
     @Published var streams: [Stream] = []
+    @Published var loading = true
     
     private let decoder = JSONDecoder()
     private let keychain = Keychain(server: "https://twitch.tv", protocolType: .https)
     
     let clientID = "fcuw7vdwr2syhkreuf9upamwboxz0b"
-    private let secret = "dwdgkupbmhcctnr52vrk0aukx1gq0a"
     private var refreshToken: String?
     
     var tokenIsValid: Bool = false
@@ -177,6 +177,7 @@ class Twitch: NSObject, ObservableObject, ASWebAuthenticationPresentationContext
     func getFollowedStreams(user: User) async {
         
         DispatchQueue.main.async{
+            self.loading = true
             self.streams = []
         }
         
@@ -216,7 +217,8 @@ class Twitch: NSObject, ObservableObject, ASWebAuthenticationPresentationContext
             }
         } while(cursor != nil)
         DispatchQueue.main.async {
-            [] in
+            self.loading = false
+            print("loading", self.loading)
             let userInfo = ["count": self.streams.count]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onStreamChange"), object: nil, userInfo: userInfo)
         }

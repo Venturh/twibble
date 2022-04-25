@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5028F2EB28170604003F34FF /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5028F2EA28170604003F34FF /* Shimmer.swift */; };
 		5072E69C2812E37B004EDC15 /* twibbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072E69B2812E37B004EDC15 /* twibbleApp.swift */; };
 		5072E6A02812E37C004EDC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5072E69F2812E37C004EDC15 /* Assets.xcassets */; };
 		5072E6A32812E37C004EDC15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5072E6A22812E37C004EDC15 /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5028F2EA28170604003F34FF /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		5072E6982812E37B004EDC15 /* twibble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twibble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5072E69B2812E37B004EDC15 /* twibbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twibbleApp.swift; sourceTree = "<group>"; };
 		5072E69F2812E37C004EDC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		50F35E9028160B15007BBB8D /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5028F2EA28170604003F34FF /* Shimmer.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				5072E6B22812E405004EDC15 /* Twitch.swift in Sources */,
 				5072E6BA2812E4DD004EDC15 /* BadgeView.swift in Sources */,
 				5072E6BE2812E504004EDC15 /* FooterView.swift in Sources */,
+				5028F2EB28170604003F34FF /* Shimmer.swift in Sources */,
 				5072E6BC2812E4EC004EDC15 /* StreamView.swift in Sources */,
 				50C27FA228149C0F00B2EA19 /* FullStreamView.swift in Sources */,
 				507C249028136C8400D94BE9 /* LoginView.swift in Sources */,
